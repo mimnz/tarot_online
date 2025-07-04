@@ -92,7 +92,7 @@ button:active {
     margin: 1rem auto;
     max-width: 95%; /* Limita a largura para centralizar melhor */
     box-sizing: border-box;
-    overflow: hidden;
+    overflow: scroll;
     position: relative; 
     flex-wrap: nowrap; 
 }
