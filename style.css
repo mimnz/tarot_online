@@ -85,7 +85,8 @@ button:active {
     overflow: hidden;
     justify-content: center; /* Centraliza as cartas */
     padding: 1rem;
-    gap: -45px; /* Espaço entre as cartas */
+    gap: 0px;
+    margin-right: -45px;
     border: 2px dashed #444;
     border-radius: 8px;
     min-height: 280px; /* Altura mínima para mostrar as cartas */
