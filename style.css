@@ -82,6 +82,7 @@ button:active {
 /* Área de Exibição das Cartas do Baralho (para seleção) */
 #deck-display {
     display: flex;
+    overflow: hidden;
     flex-wrap: wrap; /* Permite que as cartas quebrem linha */
     justify-content: center; /* Centraliza as cartas */
     padding: 1rem;
