@@ -1,0 +1,470 @@
+[
+  {
+    "id": 0,
+    "nome": "O Louco",
+    "descricao": "Significado simbolico de o louco",
+    "link": "estudo.html#o_louco"
+  },
+  {
+    "id": 1,
+    "nome": "O Mago",
+    "descricao": "Significado simbolico de o mago",
+    "link": "estudo.html#o_mago"
+  },
+  {
+    "id": 2,
+    "nome": "A Sacerdotisa",
+    "descricao": "Significado simbolico de a sacerdotisa",
+    "link": "estudo.html#a_sacerdotisa"
+  },
+  {
+    "id": 3,
+    "nome": "A Imperatriz",
+    "descricao": "Significado simbolico de a imperatriz",
+    "link": "estudo.html#a_imperatriz"
+  },
+  {
+    "id": 4,
+    "nome": "O Imperador",
+    "descricao": "Significado simbolico de o imperador",
+    "link": "estudo.html#o_imperador"
+  },
+  {
+    "id": 5,
+    "nome": "O Hierofante",
+    "descricao": "Significado simbolico de o hierofante",
+    "link": "estudo.html#o_hierofante"
+  },
+  {
+    "id": 6,
+    "nome": "Os Amantes",
+    "descricao": "Significado simbolico de os amantes",
+    "link": "estudo.html#os_amantes"
+  },
+  {
+    "id": 7,
+    "nome": "O Carro",
+    "descricao": "Significado simbolico de o carro",
+    "link": "estudo.html#o_carro"
+  },
+  {
+    "id": 8,
+    "nome": "A Força",
+    "descricao": "Significado simbolico de a forca",
+    "link": "estudo.html#a_forca"
+  },
+  {
+    "id": 9,
+    "nome": "O Eremita",
+    "descricao": "Significado simbolico de o eremita",
+    "link": "estudo.html#o_eremita"
+  },
+  {
+    "id": 10,
+    "nome": "A Roda da Fortuna",
+    "descricao": "Significado simbolico de a roda da fortuna",
+    "link": "estudo.html#a_roda_da_fortuna"
+  },
+  {
+    "id": 11,
+    "nome": "A Justiça",
+    "descricao": "Significado simbolico de a justica",
+    "link": "estudo.html#a_justica"
+  },
+  {
+    "id": 12,
+    "nome": "O Enforcado",
+    "descricao": "Significado simbolico de o enforcado",
+    "link": "estudo.html#o_enforcado"
+  },
+  {
+    "id": 13,
+    "nome": "A Morte",
+    "descricao": "Significado simbolico de a morte",
+    "link": "estudo.html#a_morte"
+  },
+  {
+    "id": 14,
+    "nome": "A Temperança",
+    "descricao": "Significado simbolico de a temperanca",
+    "link": "estudo.html#a_temperanca"
+  },
+  {
+    "id": 15,
+    "nome": "O Diabo",
+    "descricao": "Significado simbolico de o diabo",
+    "link": "estudo.html#o_diabo"
+  },
+  {
+    "id": 16,
+    "nome": "A Torre",
+    "descricao": "Significado simbolico de a torre",
+    "link": "estudo.html#a_torre"
+  },
+  {
+    "id": 17,
+    "nome": "A Estrela",
+    "descricao": "Significado simbolico de a estrela",
+    "link": "estudo.html#a_estrela"
+  },
+  {
+    "id": 18,
+    "nome": "A Lua",
+    "descricao": "Significado simbolico de a lua",
+    "link": "estudo.html#a_lua"
+  },
+  {
+    "id": 19,
+    "nome": "O Sol",
+    "descricao": "Significado simbolico de o sol",
+    "link": "estudo.html#o_sol"
+  },
+  {
+    "id": 20,
+    "nome": "O Julgamento",
+    "descricao": "Significado simbolico de o julgamento",
+    "link": "estudo.html#o_julgamento"
+  },
+  {
+    "id": 21,
+    "nome": "O Mundo",
+    "descricao": "Significado simbolico de o mundo",
+    "link": "estudo.html#o_mundo"
+  },
+  {
+    "id": 22,
+    "nome": "Ás de Paus",
+    "descricao": "Significado simbolico de as de paus",
+    "link": "estudo.html#as_de_paus"
+  },
+  {
+    "id": 23,
+    "nome": "Dois de Paus",
+    "descricao": "Significado simbolico de dois de paus",
+    "link": "estudo.html#dois_de_paus"
+  },
+  {
+    "id": 24,
+    "nome": "Três de Paus",
+    "descricao": "Significado simbolico de tres de paus",
+    "link": "estudo.html#tres_de_paus"
+  },
+  {
+    "id": 25,
+    "nome": "Quatro de Paus",
+    "descricao": "Significado simbolico de quatro de paus",
+    "link": "estudo.html#quatro_de_paus"
+  },
+  {
+    "id": 26,
+    "nome": "Cinco de Paus",
+    "descricao": "Significado simbolico de cinco de paus",
+    "link": "estudo.html#cinco_de_paus"
+  },
+  {
+    "id": 27,
+    "nome": "Seis de Paus",
+    "descricao": "Significado simbolico de seis de paus",
+    "link": "estudo.html#seis_de_paus"
+  },
+  {
+    "id": 28,
+    "nome": "Sete de Paus",
+    "descricao": "Significado simbolico de sete de paus",
+    "link": "estudo.html#sete_de_paus"
+  },
+  {
+    "id": 29,
+    "nome": "Oito de Paus",
+    "descricao": "Significado simbolico de oito de paus",
+    "link": "estudo.html#oito_de_paus"
+  },
+  {
+    "id": 30,
+    "nome": "Nove de Paus",
+    "descricao": "Significado simbolico de nove de paus",
+    "link": "estudo.html#nove_de_paus"
+  },
+  {
+    "id": 31,
+    "nome": "Dez de Paus",
+    "descricao": "Significado simbolico de dez de paus",
+    "link": "estudo.html#dez_de_paus"
+  },
+  {
+    "id": 32,
+    "nome": "Valete de Paus",
+    "descricao": "Significado simbolico de valete de paus",
+    "link": "estudo.html#valete_de_paus"
+  },
+  {
+    "id": 33,
+    "nome": "Cavaleiro de Paus",
+    "descricao": "Significado simbolico de cavaleiro de paus",
+    "link": "estudo.html#cavaleiro_de_paus"
+  },
+  {
+    "id": 34,
+    "nome": "Rainha de Paus",
+    "descricao": "Significado simbolico de rainha de paus",
+    "link": "estudo.html#rainha_de_paus"
+  },
+  {
+    "id": 35,
+    "nome": "Rei de Paus",
+    "descricao": "Significado simbolico de rei de paus",
+    "link": "estudo.html#rei_de_paus"
+  },
+  {
+    "id": 36,
+    "nome": "Ás de Copas",
+    "descricao": "Significado simbolico de as de copas",
+    "link": "estudo.html#as_de_copas"
+  },
+  {
+    "id": 37,
+    "nome": "Dois de Copas",
+    "descricao": "Significado simbolico de dois de copas",
+    "link": "estudo.html#dois_de_copas"
+  },
+  {
+    "id": 38,
+    "nome": "Três de Copas",
+    "descricao": "Significado simbolico de tres de copas",
+    "link": "estudo.html#tres_de_copas"
+  },
+  {
+    "id": 39,
+    "nome": "Quatro de Copas",
+    "descricao": "Significado simbolico de quatro de copas",
+    "link": "estudo.html#quatro_de_copas"
+  },
+  {
+    "id": 40,
+    "nome": "Cinco de Copas",
+    "descricao": "Significado simbolico de cinco de copas",
+    "link": "estudo.html#cinco_de_copas"
+  },
+  {
+    "id": 41,
+    "nome": "Seis de Copas",
+    "descricao": "Significado simbolico de seis de copas",
+    "link": "estudo.html#seis_de_copas"
+  },
+  {
+    "id": 42,
+    "nome": "Sete de Copas",
+    "descricao": "Significado simbolico de sete de copas",
+    "link": "estudo.html#sete_de_copas"
+  },
+  {
+    "id": 43,
+    "nome": "Oito de Copas",
+    "descricao": "Significado simbolico de oito de copas",
+    "link": "estudo.html#oito_de_copas"
+  },
+  {
+    "id": 44,
+    "nome": "Nove de Copas",
+    "descricao": "Significado simbolico de nove de copas",
+    "link": "estudo.html#nove_de_copas"
+  },
+  {
+    "id": 45,
+    "nome": "Dez de Copas",
+    "descricao": "Significado simbolico de dez de copas",
+    "link": "estudo.html#dez_de_copas"
+  },
+  {
+    "id": 46,
+    "nome": "Valete de Copas",
+    "descricao": "Significado simbolico de valete de copas",
+    "link": "estudo.html#valete_de_copas"
+  },
+  {
+    "id": 47,
+    "nome": "Cavaleiro de Copas",
+    "descricao": "Significado simbolico de cavaleiro de copas",
+    "link": "estudo.html#cavaleiro_de_copas"
+  },
+  {
+    "id": 48,
+    "nome": "Rainha de Copas",
+    "descricao": "Significado simbolico de rainha de copas",
+    "link": "estudo.html#rainha_de_copas"
+  },
+  {
+    "id": 49,
+    "nome": "Rei de Copas",
+    "descricao": "Significado simbolico de rei de copas",
+    "link": "estudo.html#rei_de_copas"
+  },
+  {
+    "id": 50,
+    "nome": "Ás de Espadas",
+    "descricao": "Significado simbolico de as de espadas",
+    "link": "estudo.html#as_de_espadas"
+  },
+  {
+    "id": 51,
+    "nome": "Dois de Espadas",
+    "descricao": "Significado simbolico de dois de espadas",
+    "link": "estudo.html#dois_de_espadas"
+  },
+  {
+    "id": 52,
+    "nome": "Três de Espadas",
+    "descricao": "Significado simbolico de tres de espadas",
+    "link": "estudo.html#tres_de_espadas"
+  },
+  {
+    "id": 53,
+    "nome": "Quatro de Espadas",
+    "descricao": "Significado simbolico de quatro de espadas",
+    "link": "estudo.html#quatro_de_espadas"
+  },
+  {
+    "id": 54,
+    "nome": "Cinco de Espadas",
+    "descricao": "Significado simbolico de cinco de espadas",
+    "link": "estudo.html#cinco_de_espadas"
+  },
+  {
+    "id": 55,
+    "nome": "Seis de Espadas",
+    "descricao": "Significado simbolico de seis de espadas",
+    "link": "estudo.html#seis_de_espadas"
+  },
+  {
+    "id": 56,
+    "nome": "Sete de Espadas",
+    "descricao": "Significado simbolico de sete de espadas",
+    "link": "estudo.html#sete_de_espadas"
+  },
+  {
+    "id": 57,
+    "nome": "Oito de Espadas",
+    "descricao": "Significado simbolico de oito de espadas",
+    "link": "estudo.html#oito_de_espadas"
+  },
+  {
+    "id": 58,
+    "nome": "Nove de Espadas",
+    "descricao": "Significado simbolico de nove de espadas",
+    "link": "estudo.html#nove_de_espadas"
+  },
+  {
+    "id": 59,
+    "nome": "Dez de Espadas",
+    "descricao": "Significado simbolico de dez de espadas",
+    "link": "estudo.html#dez_de_espadas"
+  },
+  {
+    "id": 60,
+    "nome": "Valete de Espadas",
+    "descricao": "Significado simbolico de valete de espadas",
+    "link": "estudo.html#valete_de_espadas"
+  },
+  {
+    "id": 61,
+    "nome": "Cavaleiro de Espadas",
+    "descricao": "Significado simbolico de cavaleiro de espadas",
+    "link": "estudo.html#cavaleiro_de_espadas"
+  },
+  {
+    "id": 62,
+    "nome": "Rainha de Espadas",
+    "descricao": "Significado simbolico de rainha de espadas",
+    "link": "estudo.html#rainha_de_espadas"
+  },
+  {
+    "id": 63,
+    "nome": "Rei de Espadas",
+    "descricao": "Significado simbolico de rei de espadas",
+    "link": "estudo.html#rei_de_espadas"
+  },
+  {
+    "id": 64,
+    "nome": "Ás de Ouros",
+    "descricao": "Significado simbolico de as de ouros",
+    "link": "estudo.html#as_de_ouros"
+  },
+  {
+    "id": 65,
+    "nome": "Dois de Ouros",
+    "descricao": "Significado simbolico de dois de ouros",
+    "link": "estudo.html#dois_de_ouros"
+  },
+  {
+    "id": 66,
+    "nome": "Três de Ouros",
+    "descricao": "Significado simbolico de tres de ouros",
+    "link": "estudo.html#tres_de_ouros"
+  },
+  {
+    "id": 67,
+    "nome": "Quatro de Ouros",
+    "descricao": "Significado simbolico de quatro de ouros",
+    "link": "estudo.html#quatro_de_ouros"
+  },
+  {
+    "id": 68,
+    "nome": "Cinco de Ouros",
+    "descricao": "Significado simbolico de cinco de ouros",
+    "link": "estudo.html#cinco_de_ouros"
+  },
+  {
+    "id": 69,
+    "nome": "Seis de Ouros",
+    "descricao": "Significado simbolico de seis de ouros",
+    "link": "estudo.html#seis_de_ouros"
+  },
+  {
+    "id": 70,
+    "nome": "Sete de Ouros",
+    "descricao": "Significado simbolico de sete de ouros",
+    "link": "estudo.html#sete_de_ouros"
+  },
+  {
+    "id": 71,
+    "nome": "Oito de Ouros",
+    "descricao": "Significado simbolico de oito de ouros",
+    "link": "estudo.html#oito_de_ouros"
+  },
+  {
+    "id": 72,
+    "nome": "Nove de Ouros",
+    "descricao": "Significado simbolico de nove de ouros",
+    "link": "estudo.html#nove_de_ouros"
+  },
+  {
+    "id": 73,
+    "nome": "Dez de Ouros",
+    "descricao": "Significado simbolico de dez de ouros",
+    "link": "estudo.html#dez_de_ouros"
+  },
+  {
+    "id": 74,
+    "nome": "Valete de Ouros",
+    "descricao": "Significado simbolico de valete de ouros",
+    "link": "estudo.html#valete_de_ouros"
+  },
+  {
+    "id": 75,
+    "nome": "Cavaleiro de Ouros",
+    "descricao": "Significado simbolico de cavaleiro de ouros",
+    "link": "estudo.html#cavaleiro_de_ouros"
+  },
+  {
+    "id": 76,
+    "nome": "Rainha de Ouros",
+    "descricao": "Significado simbolico de rainha de ouros",
+    "link": "estudo.html#rainha_de_ouros"
+  },
+  {
+    "id": 77,
+    "nome": "Rei de Ouros",
+    "descricao": "Significado simbolico de rei de ouros",
+    "link": "estudo.html#rei_de_ouros"
+  }
+]

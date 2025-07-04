@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tarot Online</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Tarot Online</h1>
+    <nav>
+      <p class="aviso">Quer aprender os significados das cartas? ➔ </p>
+      <h3><a href="estudo.html">Estudo dos Arcanos</a></h3>
+      </nav>
+  </header>
+
+  <main>
+    <section class="controls">
+      <label for="tipo-baralho">Tipo de Baralho:</label>
+      <select id="tipo-baralho">
+        <option value="22">22 Arcanos Maiores</option>
+        <option value="78">78 Cartas Completas</option>
+      </select>
+
+      <button id="btn-embaralhar">Embaralhar Cartas</button>
+      <button id="btn-salvar-tiragem" style="display: none;">Salvar Tiragem</button>
+    </section>
+
+    <section id="deck-display" class="deck-display">
+        </section>
+
+    <section id="mesa" class="mesa">
+      </section>
+
+    <section class="monetization">
+        <p>Espaço para Anúncios/Propagandas</p>
+        <button id="btn-doar-pix">Apoie com Pix</button>
+        <p id="daily-card-limit-message"></p>
+        </section>
+
+    <section class="tiragem-cards-list">
+        <h2>Cartas da Tiragem</h2>
+        <textarea id="tiragem-cards-text" rows="5" readonly placeholder="As cartas que você tirou aparecerão aqui..."></textarea>
+        <button id="btn-copy-tiragem-cards">Copiar Cartas da Tiragem</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>Este site é uma ferramenta para tirar cartas e estudar seus significados. Ele não substitui a leitura feita por um tarólogo profissional. A interpretação final e o uso dos resultados são de responsabilidade do usuário.</p>
+  </footer>
+
+  <div id="card-description-overlay" class="card-description-overlay">
+    <div class="card-description-content">
+      <span class="close-overlay" title="Fechar">&times;</span>
+      <h3 id="overlay-card-name"></h3>
+      <p id="overlay-card-description"></p>
+      <a id="overlay-card-study-link" href="estudo.html" target="_blank" class="study-link">Ver Estudo Completo</a>
+      </div>
+  </div>
+
+  <div id="save-tiragem-overlay" class="card-description-overlay">
+    <div class="card-description-content">
+      <span class="close-overlay" data-overlay="save-tiragem-overlay" title="Fechar">&times;</span>
+      <h3>Salvar Tiragem</h3>
+      <label for="tiragem-nome">Nome da Tiragem:</label>
+      <input type="text" id="tiragem-nome" placeholder="Ex: Pergunta sobre Carreira">
+      <button id="confirmar-salvar-tiragem">Salvar</button>
+    </div>
+  </div>
+
+  <div id="pix-donation-overlay" class="card-description-overlay">
+    <div class="card-description-content">
+      <span class="close-overlay" data-overlay="pix-donation-overlay" title="Fechar">&times;</span>
+      <h3>Apoiar via Pix</h3>
+      <p>Obrigada por sua contribuição! Seu apoio é muito importante 😁💗!</p>
+      <div class="pix-key-display">
+        <p id="pix-key">5aad385e-b624-43e5-96a2-78a710080d53</p>
+        <button id="copy-pix-key-btn" class="pix-copy-button">Copiar Chave Pix</button>
+      </div>
+      <p class="aviso">O destinatário deve aparecer como "Milena Lacerda Muniz"</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

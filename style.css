@@ -1,0 +1,665 @@
+/* style.css */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #111;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  overflow-x: hidden;
+  display: flex; /* Make body a flex container */
+  flex-direction: column; /* Stack children vertically */
+  min-height: 100vh; /* Ensure body takes full viewport height */
+}
+
+header {
+  padding: 1rem;
+  background: #222;
+  border-bottom: 1px solid #444;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header h1 {
+    margin: 0;
+    text-align: center;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav a {
+  color: #873fe6;
+  margin: 0 1rem;
+  text-decoration: none;
+  text-align: center;
+}
+
+nav a:hover {
+  color: #ffffff;
+}
+
+/* Language selector styles removed */
+
+.controls {
+  margin: 1rem auto;
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+input, select, button {
+  padding: 0.75rem 1.2rem;
+  margin: 0.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background-color: #555;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Área de Exibição das Cartas do Baralho (para seleção) */
+#deck-display {
+    display: flex;
+    flex-wrap: wrap; /* Permite que as cartas quebrem linha */
+    justify-content: center; /* Centraliza as cartas */
+    padding: 1rem;
+    gap: 10px; /* Espaço entre as cartas */
+    border: 2px dashed #444;
+    border-radius: 8px;
+    min-height: 280px; /* Altura mínima para mostrar as cartas */
+    margin: 1rem auto;
+    max-width: 95%; /* Limita a largura para centralizar melhor */
+    box-sizing: border-box;
+    /* overflow-x: auto; */ /* Desabilitado, as cartas quebrarão linha */
+    position: relative; /* Para posicionar as cartas durante a animação de embaralhamento */
+}
+
+/* Área de Tiragem - onde as cartas selecionadas vão */
+#mesa {
+  display: flex;
+  flex-wrap: nowrap; /* Impede que as cartas quebrem linha, força o scroll */
+  justify-content: flex-start; /* Alinha as cartas ao início (esquerda) */
+  align-items: center;
+  padding: 1rem;
+  gap: 10px; /* Espaço entre as cartas */
+  overflow-x: auto; /* Adiciona rolagem horizontal se necessário */
+  white-space: nowrap; /* Garante que os itens flex não quebrem linha */
+  max-width: calc(100vw - 20px);
+  border: 2px dashed #444;
+  border-radius: 8px;
+  min-height: 277px; /* Altura mínima para a mesa segurar as cartas */
+  margin: 1rem auto; /* Centraliza a mesa */
+  box-sizing: border-box;
+}
+
+.carta-wrapper {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    perspective: 1000px;
+    flex-shrink: 0;
+    width: 150px;
+    height: 257px;
+    box-sizing: border-box; /* Garante que padding/border não aumentem o tamanho */
+}
+
+.carta-wrapper.pulled {
+    /* Estado inicial para animação de puxar */
+    opacity: 0; /* Começa invisível na posição antiga */
+    transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+
+
+.carta-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s ease;
+    transform-style: preserve-3d;
+}
+
+.carta-wrapper.flipped .carta-inner {
+    transform: rotateY(180deg);
+}
+
+.carta-frente, .carta-verso {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+}
+
+.carta-verso {
+    background-image: url('img/verso.jpg');
+}
+
+.carta-frente {
+    transform: rotateY(180deg);
+}
+
+/* ESTILO ADICIONADO: Rotação para a imagem da frente de cartas invertidas */
+.carta-wrapper.inverted .carta-frente {
+    /* Combina a rotação Y (para virar a carta) com a rotação Z (para inverter a imagem) */
+    transform: rotateY(180deg) rotateZ(180deg);
+}
+
+/* Efeito hover nas cartas na deck-display e na mesa */
+.carta-wrapper:hover .carta-frente,
+.carta-wrapper:hover .carta-verso {
+  border-color: yellow;
+}
+
+.carta-wrapper:hover {
+  transform: translateY(-10px) rotate(-3deg);
+  z-index: 10;
+}
+
+.carta-nome {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.85em;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    transform-style: preserve-3d; /* Adicionado para garantir que as transformações 3D aninhadas funcionem corretamente */
+}
+
+.carta-wrapper.flipped .carta-nome {
+    opacity: 1;
+    /* Quando virada, contra-rotaciona no eixo Y para tornar o texto legível */
+    transform: translateX(-50%) rotateY(180deg);
+}
+
+/* NOVO ESTILO: Rotação para o texto de cartas invertidas */
+/* Quando a carta estiver invertida (e ela também está virada, pois esta classe se aplica após a virada),
+   seu nome deve estar de cabeça para baixo (rotateZ) E legível (contra-rotateY) */
+.carta-wrapper.inverted .carta-nome {
+    /* Combina a rotação Y para legibilidade com a rotação Z para inversão */
+    transform: translateX(-50%) rotateY(180deg) rotateZ(180deg);
+}
+
+/* Overlay de descrição da carta */
+.card-description-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.card-description-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.card-description-content {
+  background-color: #222;
+  color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 600px;
+  text-align: left;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  max-height: 90vh; /* Para garantir que caiba em telas menores */
+  overflow-y: auto; /* Adiciona scroll se o conteúdo for grande */
+}
+
+.close-overlay {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 2em;
+  cursor: pointer;
+  color: #fff;
+}
+
+.close-overlay:hover {
+  color: #ccc;
+}
+
+#overlay-card-name {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  color: #FFD700;
+}
+
+#overlay-card-description {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.study-link { /* Centralizado e Alaranjado */
+  display: block; /* Para ocupar a largura total e centralizar texto */
+  background-color: #f0ad4e; /* Laranja */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1em;
+  margin: 10px auto 0 auto; /* Centraliza o botão */
+  transition: background-color 0.3s ease;
+  text-align: center; /* Centraliza o texto dentro do botão */
+  max-width: 250px; /* Limita a largura do botão para não ser muito grande */
+}
+
+.study-link:hover {
+  background-color: #ec971f; /* Laranja mais escuro no hover */
+}
+
+/* .back-to-table-button removed */
+
+.monetization {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: #2a2a2a;
+    border-top: 1px solid #444;
+}
+.monetization p {
+    margin-bottom: 10px;
+}
+
+.monetization button {
+    background-color: #f0ad4e; /* Amarelo/Laranja para destaque */
+    margin: 5px;
+}
+.monetization button:hover {
+    background-color: #ec971f;
+}
+
+/* #premium-button removed */
+
+footer {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: #222;
+  font-size: 0.9rem;
+}
+
+/* Animação para espalhar as cartas (início do embaralhamento) */
+@keyframes spread-cards {
+    0% {
+        transform: scale(0.8) translateY(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+
+.deck-display.animating-spread .carta-wrapper {
+    animation: spread-cards 0.5s ease-out forwards;
+    /* Adicionar um delay para cada carta para o efeito de "espalhar" */
+    animation-delay: var(--card-delay);
+}
+
+/* Estilos para a nova área de listagem das cartas da tiragem */
+.tiragem-cards-list {
+    margin: 2rem auto;
+    padding: 1rem;
+    border: 2px dashed #444;
+    border-radius: 8px;
+    max-width: 95%;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.tiragem-cards-list h2 {
+    text-align: center;
+    margin-top: 0;
+    color: #FFD700;
+}
+
+#tiragem-cards-text {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #555;
+    background-color: #333;
+    color: #fff;
+    resize: vertical; /* Permite redimensionar verticalmente */
+    min-height: 80px;
+}
+
+#btn-copy-tiragem-cards {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    background-color: #28a745; /* Verde */
+}
+
+#btn-copy-tiragem-cards:hover {
+    background-color: #218838;
+}
+
+/* Estilos para o overlay de doação Pix */
+.pix-key-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    background-color: #333;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #555;
+}
+
+#pix-key {
+    font-family: 'Courier New', monospace;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #FFD700;
+    word-break: break-all; /* Quebra palavras longas */
+    text-align: center;
+}
+
+.pix-copy-button {
+    background-color: #28a745; /* Verde */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.pix-copy-button:hover {
+    background-color: #218838;
+}
+
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+    .controls {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav {
+        margin-top: 10px;
+        justify-content: center;
+    }
+
+    #mesa, #deck-display { /* Ajusta ambos */
+        width: 98%; /* Ocupa mais largura em telas menores */
+    }
+
+    .card-description-content {
+        width: 95%;
+    }
+}
+
+@media (max-width: 480px) {
+    input, select, button {
+        width: calc(100% - 20px);
+        margin: 0.5rem 10px;
+    }
+
+    .carta-wrapper, .carta-frente, .carta-verso, .carta-inner {
+        width: 120px; /* Reduz o tamanho das cartas para caber mais */
+        height: 205.6px; /* Mantém a proporção */
+    }
+
+    #mesa, #deck-display { /* Ajusta ambos */
+        gap: 5px; /* Reduz o espaçamento entre as cartas */
+    }
+
+    #overlay-card-name {
+      font-size: 1.4em;
+    }
+
+    .study-link {
+      padding: 8px 15px;
+      font-size: 0.9em;
+    }
+}
+
+.carta-img {
+  width: 150px;  /* Define a largura da imagem */
+  height: 257px; /* A altura é calculada para manter a proporção (150 * 120/70 ≈ 257) */
+  display: block; /* Ajuda a remover espaços extras e permite centralização */
+  margin: 0 auto; /* Centraliza a imagem horizontalmente */
+  margin-bottom: 15px; /* Adiciona um pequeno espaçamento abaixo de cada carta */
+}
+
+.aviso {
+  font-size: 0.85em;
+  text-align: center;
+  opacity: 65%;
+}
+
+/* =========================== */
+/* Estilos para a página Estudo */
+/* =========================== */
+
+/* Layout principal com sidebar */
+.container {
+  display: flex;
+  flex: 1; /* Allow container to grow and take available space */
+  width: 100%;
+  max-width: 1200px; /* Limit overall width */
+  margin: 0 auto; /* Center the container */
+  padding: 20px 0;
+}
+
+.sidebar {
+  width: 250px; /* Largura padrão da sidebar em telas maiores */
+  background-color: #2a2a2a;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+  overflow-y: auto; /* Adiciona scroll se o conteúdo for muito longo */
+  flex-shrink: 0; /* Impede que a sidebar encolha */
+  text-align: left; /* Alinha o texto à esquerda dentro da sidebar */
+  position: sticky; /* Torna a sidebar pegajosa */
+  top: 0; /* Fixa no topo quando a página rola */
+  height: calc(100vh - 70px); /* Ajusta a altura para a viewport menos o header */
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0; /* Removido padding padrão */
+  margin: 0; /* Removido margin padrão */
+}
+
+/* AJUSTADO: Mais espaçamento para os títulos de categoria (H2, H3, H4) na sidebar */
+.sidebar-nav h2 {
+  color: #873fe6;
+  margin-top: 0; /* Título principal sempre no topo */
+  margin-bottom: 15px; /* Aumenta a margem abaixo do título principal */
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.sidebar-nav h3,
+.sidebar-nav h4 {
+  margin-top: 15px;   /* AUMENTADO: Mais espaço acima dos títulos de categoria (Arcanos Maiores, Naipes) */
+  margin-bottom: 5px; /* AUMENTADO: Mais espaço abaixo dos títulos de categoria */
+  font-size: 1em;
+  color: #ccc;
+}
+
+/* MANTIDO: Espaçamento para os itens individuais dos arcanos (O Louco, O Mago, etc.) */
+.sidebar-nav ul li {
+  margin-bottom: 0px; /* Zera a margem entre os itens da lista */
+  padding: 1px 0; /* Adiciona um pequeno preenchimento interno para separar um pouco */
+}
+
+.sidebar-nav ul li a {
+  display: block;
+  padding: 2px 10px; /* Reduz o padding para compactar a área do link */
+  line-height: 1.0; /* <-- MANTIDO! Garante que o texto fique bem colado */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sidebar-nav ul li a:hover {
+  background-color: #555;
+  color: #FFD700;
+}
+
+/* AJUSTADO: Sub-menus (ul ul) para um leve respiro com o título */
+.sidebar-nav ul ul { /* Estilo para sub-menus (ex: Arcanos Maiores, Naipes) */
+  margin-left: 10px; /* Mantém um recuo menor */
+  border-left: 1px solid #444;
+  padding-left: 0px; /* Zera o padding esquerdo */
+  margin-top: -3px; /* <-- AJUSTADO! Valor negativo para puxar, mas com leve respiro */
+}
+
+/* Regra específica para o ul com a classe 'aviso' */
+.sidebar-nav ul.aviso {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.main-content {
+  flex-grow: 1; /* Permite que o conteúdo principal ocupe o espaço restante */
+  padding: 20px;
+  text-align: center;
+  overflow-x: hidden; /* Evita rolagem horizontal indesejada */
+}
+
+.main-content section {
+  background-color: #2a2a2a;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.main-content section h2 {
+  color: #FFD700;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.main-content section p {
+  text-align: left;
+  line-height: 1.6;
+}
+
+/* Ajustes para tópicos principais (Arcanos Maiores/Menores) */
+h1.topico, h2.topico {
+  color: #873fe6;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-size: 2em;
+  border-bottom: 2px solid #444;
+  padding-bottom: 10px;
+}
+
+/* Linha separadora */
+hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #444, rgba(0, 0, 0, 0));
+  margin: 40px 0;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column; /* Coloca sidebar e conteúdo em coluna */
+    padding: 0;
+  }
+
+  .sidebar {
+    position: static; /* Remove sticky positioning */
+    width: 100%; /* Sidebar ocupa toda a largura */
+    height: auto; /* Altura automática */
+    border-bottom: 2px solid #444; /* Borda deve ser positiva */
+    box-shadow: none;
+    padding-bottom: 0;
+  }
+
+  .sidebar-nav ul {
+    display: flex; /* Permite que os itens de nível superior se organizem em linha */
+    flex-wrap: wrap; /* Quebra linha se necessário */
+    justify-content: center; /* Centraliza os itens */
+    padding: 10px 0;
+  }
+
+  .sidebar-nav > ul > li { /* Apenas para os itens de nível superior (Arcanos Maiores, Arcanos Menores) */
+    margin: 5px 10px; /* Espaçamento entre os itens de nível superior na horizontal */
+  }
+
+  .sidebar-nav ul ul {
+    display: none; /* Esconde os sub-menus por padrão em telas pequenas */
+  }
+
+  .sidebar-nav h2 {
+    display: none; /* Esconde o título principal do índice em telas pequenas */
+  }
+
+  .main-content {
+    padding: 20px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar-nav ul {
+    flex-direction: column; /* Empilha os itens do menu verticalmente */
+  }
+
+  .sidebar-nav ul li a {
+    text-align: center; /* Centraliza o texto do link apenas em telas muito pequenas */
+  }
+
+  .sidebar-nav > ul > li {
+       margin: 2px 0; /* Ajusta a margem para itens de nível superior na coluna */
+   }
+}
