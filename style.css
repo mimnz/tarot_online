@@ -83,7 +83,6 @@ button:active {
 #deck-display {
     display: flex;
     overflow: hidden;
-    flex-wrap: wrap; /* Permite que as cartas quebrem linha */
     justify-content: center; /* Centraliza as cartas */
     padding: 1rem;
     gap: 10px; /* Espaço entre as cartas */
@@ -93,8 +92,9 @@ button:active {
     margin: 1rem auto;
     max-width: 95%; /* Limita a largura para centralizar melhor */
     box-sizing: border-box;
-    /* overflow-x: auto; */ /* Desabilitado, as cartas quebrarão linha */
-    position: relative; /* Para posicionar as cartas durante a animação de embaralhamento */
+    overflow-x: auto;
+    position: relative; 
+    flex-wrap: nowrap; 
 }
 
 /* Área de Tiragem - onde as cartas selecionadas vão */
